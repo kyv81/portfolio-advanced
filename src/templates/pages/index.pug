@@ -4,5 +4,32 @@ block variables
     - var title = 'Главная'
 
 block content 
-    h1 Главная 
+    .wrapper.intro
+        .auth
+            a(href="").auth__button Авторизоваться
+        .container 
+            .welcome
+                .welcome__pic
+                    img(src="./img/content/my_photo.jpg").welcome__img
+                .welcome__desc 
+                    .welcome__desc-title Юрий Курбаков 
+                    .welcome__desc-txt Личный сайт веб разработчика
+                ul.socials
+                    li.socials__item
+                        a(href="https://vk.com/ykurbakov" target="_blank").socials__link.socials__link--vk 
+                    li.socials__item
+                        a(href="https://github.com/kyv81" target="_blank").socials__link.socials__link--github
+                    li.socials__item
+                        a(href="https://www.instagram.com/?hl=ru" target="_blank").socials__link.socials__link--in                    
+                ul.welcome__list
+                    li.welcome__item    
+                        a(href="#").welcome__link Мои работы
+                    li.welcome__item
+                        a(href="#").welcome__link Обо мне
+                    li.welcome__item  
+                        a(href="#").welcome__link Блог
+        .copyright © Юрий Курбаков | создано с любовью в LoftSchool | 2017 
+            
+
+
     
