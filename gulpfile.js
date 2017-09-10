@@ -6,7 +6,9 @@ var gulp = require('gulp'),
 // стили 
 var sass = require('gulp-sass'),
     rename = require('gulp-rename'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    autoprefixer = require('gulp-autoprefixer'),
+    spritesmith = require('gulp.spritesmith');
 
 // scripts
 var gulpWebpack = require('gulp-webpack'),
@@ -28,6 +30,10 @@ var paths = {
     images: {
         src: 'src/images/**/*.*',
         dest: 'build/img/'
+    },
+    icons: {
+        src: 'src/images/icons/*.png',
+        dest: 'build/img/icons/'
     },
     fonts: {
         src: 'src/fonts/**/*.*',
@@ -51,6 +57,7 @@ function styles() {
     return gulp.src('./src/styles/app.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(autoprefixer({ browsers: ['last 2 versions'] }))
         .pipe(sourcemaps.write())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(paths.styles.dest))
@@ -90,6 +97,17 @@ function images() {
         .pipe(gulp.dest(paths.images.dest));
 }
 
+// делаем спрайт из иконок
+function sprite() {
+    return gulp.src(paths.icons.src)
+        .pipe(spritesmith({
+            imgName: 'sprite.png',
+            padding: 10,
+            cssName: 'sprite.css'
+        }))
+        .pipe(gulp.dest(paths.icons.dest));
+}
+
 // перенос шрифтов
 function fonts() {
     return gulp.src(paths.fonts.src)
@@ -100,6 +118,7 @@ exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
+exports.sprite = sprite;
 exports.fonts = fonts;
 exports.scripts = scripts;
 
