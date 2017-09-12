@@ -29,6 +29,10 @@ var paths = {
         src: 'src/images/**/*.*',
         dest: 'build/img/'
     },
+    fonts: {
+        src: 'src/fonts/**/*.*',
+        dest: 'build/fonts/'
+    },
     scripts: {
         src: 'src/scripts/**/*.js',
         dest: 'build/js/'
@@ -86,20 +90,27 @@ function images() {
         .pipe(gulp.dest(paths.images.dest));
 }
 
+// перенос шрифтов
+function fonts() {
+    return gulp.src(paths.fonts.src)
+        .pipe(gulp.dest(paths.fonts.dest));
+}
+
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
+exports.fonts = fonts;
 exports.scripts = scripts;
 
 // работаем
 gulp.task('default', gulp.series(
-    gulp.parallel(templates, styles, scripts, images),
+    gulp.parallel(templates, styles, scripts, images, fonts),
     gulp.parallel(watch, server)
 ));
 
 // контрольная сборка
 gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(templates, styles, scripts, images)
+    gulp.parallel(templates, styles, scripts, images, fonts)
 ));
