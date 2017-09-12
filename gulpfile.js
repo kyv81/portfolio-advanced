@@ -3,6 +3,20 @@ var gulp = require('gulp'),
     del = require('del'),
     browserSync = require('browser-sync').create();
 
+// svg 
+var svgSprite = require('gulp-svg-sprite'),
+    svgmin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio'),
+    replace = require('gulp-replace');
+
+var config = {
+    mode: {
+        symbol: {
+            sprite: "../sprite.svg",
+        }
+    }
+};
+
 // стили 
 var sass = require('gulp-sass'),
     rename = require('gulp-rename'),
@@ -33,6 +47,7 @@ var paths = {
     },
     icons: {
         src: 'src/images/icons/*.png',
+        source: 'src/images/icons/*.svg',
         dest: 'build/img/icons/'
     },
     fonts: {
@@ -48,7 +63,9 @@ var paths = {
 // pug
 function templates() {
     return gulp.src(paths.templates.pages)
-        .pipe(pug({ pretty: true }))
+        .pipe(pug({
+            pretty: true
+        }))
         .pipe(gulp.dest(paths.root));
 }
 
@@ -56,10 +73,16 @@ function templates() {
 function styles() {
     return gulp.src('./src/styles/app.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(autoprefixer({ browsers: ['last 2 versions'] }))
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
         .pipe(sourcemaps.write())
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest(paths.styles.dest))
 }
 
@@ -97,8 +120,8 @@ function images() {
         .pipe(gulp.dest(paths.images.dest));
 }
 
-// делаем спрайт из иконок
-function sprite() {
+// делаем спрайт из иконок png
+function spritePng() {
     return gulp.src(paths.icons.src)
         .pipe(spritesmith({
             imgName: 'sprite.png',
@@ -107,6 +130,33 @@ function sprite() {
         }))
         .pipe(gulp.dest(paths.icons.dest));
 }
+
+// делаем спрайт из иконок svg
+function spriteSvg() {
+    return gulp.src(paths.icons.source)
+      // минифицируем svg
+      .pipe(svgmin({
+        js2svg: {
+          pretty: true
+        }
+      }))
+      // удалить все атрибуты fill, style and stroke в фигурах
+      .pipe(cheerio({
+        run: function($) {
+          $('[fill]').removeAttr('fill');
+          $('[stroke]').removeAttr('stroke');
+          $('[style]').removeAttr('style');
+        },
+        parserOptions: {
+          xmlMode: true
+        }
+      }))
+      // cheerio плагин заменит, если появилась, скобка '&gt;', на нормальную.
+      .pipe(replace('&gt;', '>'))
+      // build svg sprite
+      .pipe(svgSprite(config))
+      .pipe(gulp.dest(paths.icons.dest));
+  }
 
 // перенос шрифтов
 function fonts() {
@@ -118,18 +168,19 @@ exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
-exports.sprite = sprite;
+exports.spritePng = spritePng;
+exports.spriteSvg = spriteSvg;
 exports.fonts = fonts;
 exports.scripts = scripts;
 
 // работаем
 gulp.task('default', gulp.series(
-    gulp.parallel(templates, styles, scripts, images, fonts),
+    gulp.parallel(templates, styles, scripts, fonts, images, spriteSvg),
     gulp.parallel(watch, server)
 ));
 
 // контрольная сборка
 gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(templates, styles, scripts, images, fonts)
+    gulp.parallel(templates, styles, scripts, fonts, images, spriteSvg)
 ));

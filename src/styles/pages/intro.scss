@@ -91,23 +91,20 @@
     display: inline-block;
     vertical-align: middle; 
 }
-.icon-fb {
-    background-image: url('../img/icons/sprite.png');
-    background-position: 0px 0px;
-    width: 24px;
-    height: 24px;
+.icon-vk, .icon-github, .icon-in {
+    fill: $green;
+}
+.icon-vk {
+    width: 30px;
+    height: 17px;
 }
 .icon-github {
-    background-image: url('../img/icons/sprite.png');
-    background-position: -34px 0px;
     width: 26px;
     height: 22px;
 }
-.icon-vk {
-    background-image: url('../img/icons/sprite.png');
-    background-position: 0px -34px;
-    width: 31px;
-    height: 17px;
+.icon-in {
+    width: 24px;
+    height: 23px;
 }
 .welcome__list {
     display: flex;
