@@ -1,24 +1,73 @@
 *, *:before, *:after {
     box-sizing: border-box;
 }
-
 body, html {
     width: 100%;
     height: 100%;
 }
-
 body {
-    font-family: 'robotomedium', Arial, Helvetica, sans-serif;
+    font-family: 'robotomedium';
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     line-height: 1.42;
 }
-
 .wrapper {
+    width: 100%;
+    // height: 100%;
     min-height: 100%;
-    min-width: 100%;
     position: relative;
     overflow: hidden;
+}
+.section {
+    width: 100%;
+    height: 100%;
+}
+.section-title {
+    width: 100%;
+}
+.section-title__pic {
+    width: 100%;
+    opacity: 0.06;
+}
+.block-title {
+    font-family: 'bernier_regularregular';
+    font-size: 63px;
+    line-height: 66px;
+    width: 100%;
+    text-align: center;
+    color: $title;
+    &:before, &:after {
+        content: '';
+        display: block;
+        width: 22px;
+        height: 5px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $grey;  
+    }
+    &:before {
+        left: 50px;
+    }
+    &:after {
+        right: 50px;
+    }
+}
+.block-subtitle {
+    font-family: 'bernier_regularregular';
+    font-size: 35px;
+    text-align: center;
+    line-height: 41px;
+    color: $subtitle;
+}
+.rectangle {
+    width: 22px;
+    height: 5px;
+}
+.text-content {
+    font-family: 'robotoregular';
+    line-height: 24px;
+    color: $subtitle;
 }
 
 h1, h2, h3 {

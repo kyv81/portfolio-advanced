@@ -1,0 +1,28 @@
+.socials {
+    display: flex;
+    justify-content: center;
+}
+.socials__item + .socials__item {
+    margin-left: 25px;
+}
+.socials__link {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+    opacity: 0.5;
+    transition: 0.3s;
+    &:hover {
+        opacity: 1;
+    }
+}
+.icon-vk, .icon-github, .icon-in {
+    fill: $green;
+}
+.icon-vk_color_white, .icon-github_color_white, .icon-in_color_white {
+    fill: #fff;
+}
+.socials__icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
