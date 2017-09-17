@@ -1,6 +1,7 @@
 // common 
 @import 'common/normalize';
 @import 'common/fonts';
+@import 'common/font-awesome';
 @import 'common/vars';
 @import 'common/mixins';
 @import 'common/base';
@@ -12,3 +13,4 @@
 // pages
 @import 'pages/intro';
 @import 'pages/about';
+@import 'pages/works';

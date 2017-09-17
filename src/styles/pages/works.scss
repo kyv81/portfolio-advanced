@@ -1,0 +1,311 @@
+.triangle {
+    max-width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.works {
+    position: relative;
+    width: 100%;
+    background-color: $lightbrown;
+    padding-top: 100px;
+}
+.works__columns {
+    display: flex;
+    height: 100%;
+    position: relative;
+}
+.works__left {
+    width: 40%;
+    margin-left: 10%;
+}
+.works__pic {
+    width: 100%;
+    height: 100%;
+    margin-bottom: -10px;
+}
+.works__img  {
+    max-width: 100%;
+}
+.works__right {
+    width: 40%;
+    margin-right: 10%;
+}
+.works__site {
+    height: 100%;
+    @include flex;
+    align-items: flex-start;
+    padding-left: 100px;
+}
+.works__site-title {
+    width: 50%;
+    margin-bottom: 40px;
+}
+.works__site-desc {
+    margin-bottom: 40px;
+    border-top: 1px solid rgba($darkengreen, 0.3);
+    border-bottom: 1px solid rgba($darkengreen, 0.3);
+    width: 90%;
+}
+.works__desc-title {
+    color: $green;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+.works__site-btn {
+    background-color: $green;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        background-color: #fff;
+        .works__btn-icon {
+            fill: $green;
+        }
+        .works__btn-text {
+            color: $green;
+        }
+    }
+}
+.works__btn-content {
+    display: flex;
+    align-items: center;
+    padding: 14px 19px;
+}
+.works__btn-icon {
+    fill: #fff;
+}
+.works__btn-text {
+    color: #fff;
+    margin-left: 10px;
+}
+.arrows {
+    fill: $green;
+}
+.arrow-down {
+    transform: rotate(90deg);
+    position: absolute;
+    left: 2.5%;
+    top: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.5) rotate(90deg);    
+    }
+}
+.arrow-up {
+    transform: rotate(-270deg);
+    position: absolute;
+    right: 2.5%;
+    top: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.5) rotate(-270deg);
+    }
+}
+.dots {
+    position: absolute;
+    left: 45%;
+    transform: translateX(-45%);
+    bottom: 5%;
+    display: flex;
+}
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    cursor: pointer;
+    &_color_green {
+        background-color: $green;
+    }
+    &_color_white {
+        background-color: #fff;
+        border: 2px solid $green;
+    }
+}
+.dot + .dot {
+    margin-left: 20px;
+}
+.what {
+    background: url('../img/bg/bg-works.jpg') center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: 150px;
+}
+.what__content {
+    height: 100%;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.what__title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 70px;
+    .block-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &:before, &:after {
+            content: '';
+            display: block;
+            width: 22px;
+            height: 5px;
+            position: absolute;
+            top: 25%;
+            transform: translateY(-25%);
+            background-color: $grey;  
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+    }
+}
+.what__pic {
+    opacity: 0.07;
+}
+.left-quote {
+    font-family: 'FontAwesome';
+    display: block;
+    font-size: 36px;
+    color: $title;
+    opacity: 0.2;
+    margin-bottom: 30px;
+}
+.what__comments {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 260px;
+    margin-bottom: 70px;
+}
+.what__comments-left, .what__comments-right {
+    max-width: 370px;
+    height: 100%;
+    max-height: 100%;
+}
+.what__comments-left {
+    margin-right: 20px;
+}
+.what__comments-right {
+    margin-left: 20px;
+}
+.what__comments-text {
+    margin-bottom: 30px;
+}
+.what__comments-author {
+    display: flex;
+    align-items: center;
+}
+.what__comments-pic {
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.what__comments-img {
+    max-width: 100%;
+}
+.what__comments-user {
+    margin-left: 20px;
+    color: $green;
+}
+.what__comments-name {
+    font-family: 'robotobold';
+}
+.what__comment-occ {
+    font-family: 'robotoregular';
+}
+.form {
+    width: 385px;
+    margin-bottom: 70px;
+    padding-top: 37px;
+    background-color: rgba(#fff, 0.5);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    position: relative;
+    // filter: blur(5px);
+}
+.contact-form__fields {
+    padding: 0 20px;
+}
+.contact-form__title {
+    margin-bottom: 40px;
+    .block-subtitle {
+        &:before, &:after {
+            content: '';
+            display: block;
+            width: 22px;
+            height: 5px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $grey;  
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+    }
+}
+.contact-form__row {
+    margin-bottom: 20px;
+}
+.contact-form__name-input {
+    width: 100%;
+    padding: 18px 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: none;
+    @include placeholder {
+        font-family: 'robotoregular';
+        color: $title;
+        opacity: 0.5;
+    }
+}
+.contact-form__email-input {
+    @extend .contact-form__name-input;
+}
+.contact-form__textarea {
+    @extend .contact-form__name-input;
+    resize: none;
+    height: 140px;
+}
+.contact-form__btns {
+    display: flex;
+    justify-content: center;
+}
+.contact-form__button-send, .contact-form__button-clear {
+    width: 50%;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+.contact-form__button-send {
+    background-color: $lightergreen;
+    border-right: 1px solid $lightgrey;
+}
+.contact-form__button-clear {
+    background-color: $darkergreen;
+}
+.arrow__up {
+    transform: rotate(180deg);
+    opacity: 0.7;
+    transition: 0.3s;
+    &:hover {
+        opacity: 1;
+    }
+}
+  
+  

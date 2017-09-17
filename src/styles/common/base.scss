@@ -59,10 +59,9 @@ body {
     line-height: 41px;
     color: $subtitle;
     position: relative;
-}
-.rectangle {
-    width: 22px;
-    height: 5px;
+    &_align_left {
+        text-align: left;
+    }
 }
 .text-content {
     font-family: 'robotoregular';
