@@ -1,0 +1,81 @@
+extends ../template 
+
+block variables 
+    - var title = "Блог"
+
+block content 
+    .wrapper
+        section.section.hero.blog
+            .hero__bg.hero__bg-blog
+                .hero__header
+                    .hero__socials
+                        ul.socials
+                            li.socials__item
+                                a(href="https://vk.com/ykurbakov" target="_blank").socials__link
+                                    svg(width="30", height="17").socials__icon.icon-vk.icon-vk_color_white 
+                                        use(xlink:href="img/icons/sprite.svg#vk") 
+                            li.socials__item
+                                a(href="https://github.com/kyv81" target="_blank").socials__link
+                                    svg(width="26", height="22").socials__icon.icon-github.icon-github_color_white 
+                                        use(xlink:href="img/icons/sprite.svg#github")
+                            li.socials__item 
+                                a(href="https://www.facebook.com/profile.php?id=100009954705314" target="_blank").socials__link
+                                    svg(width="24", height="23").socials__icon.icon-in.icon-in_color_white
+                                        use(xlink:href="img/icons/sprite.svg#in")
+                    .hero__menu
+                        button.hamburger
+                            a(href="#").hamburger__link
+                                .hamburger__bars
+                .hero__user
+                        .hero__user-pic
+                            img.hero__user-img(src="./img/content/my_photo.jpg")
+
+                .hero__blog
+                    .hero__blog-title
+                        img(src="img/bg/blog_header.svg").hero__blog-pic
+                        .hero__blog__info
+                            .block-title.block-title_color_white Блог
+                            .hero__blog-text.text-content
+                                p Статьи, которые я написал
+
+            .triangles
+                svg.triangle__block(xmlns="http://www.w3.org/2000/svg"
+                            viewbox="0 0 1000 85"
+                            preserveaspectratio="none")
+                    polygon.triangle__left.triangle__blog(points="0,0 0,86 500.8,86 500.8,75.5")
+                    polygon.triangle__right.triangle__blog(points="1000,0 1000,86 500,86 500,75.5")
+
+        main.main
+            aside.sidebar
+                nav.nav
+                    ul.nav__list
+                        li.nav__item 
+                            a(href="#").nav__link.nav__link_active Самое важное в SASS
+                        li.nav__item 
+                            a.a(href="#").nav__link Приемы в верстке, без которых не обходится ни один сайт
+                        li.nav__item
+                            a(href="#").nav__link Самый необходимый набор Gulp плагинов 
+                        li.nav__item 
+                            a(href="#").nav__link Почему я выбрал Pug 
+            
+            section.main-content
+                article.article
+                    .article__title
+                        .block-subtitle.block-subtitle_align_left Самое важное в SASS
+                        .article__date 22 ноября 2016
+                        .article__text.text-content
+                            p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                            p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                        .article__insert 
+                            img(src="img/content/example.png").article__example
+                        .article__end
+                article.article
+                    .article__title
+                        .block-subtitle.block-subtitle_align_left Приемы в верстке, без которых не обходится ни один сайт
+                        .article__date 13 ноября 2016
+                        .article__text.text-content
+                            p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                            p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                    
+
+        include ../common/footer                    

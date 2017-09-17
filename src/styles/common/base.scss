@@ -35,6 +35,9 @@ body {
     width: 100%;
     text-align: center;
     color: $title;
+    &_color_white {
+        color: #fff;
+    }
     &:before, &:after {
         content: '';
         display: block;
