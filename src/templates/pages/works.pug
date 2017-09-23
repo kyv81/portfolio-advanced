@@ -1,0 +1,130 @@
+extends ../template 
+
+block variables 
+    - var title = "Мои работы"
+
+block content 
+    .wrapper
+        section.section.hero
+            .hero__bg
+                .hero__header
+                    .hero__socials
+                        ul.socials
+                            li.socials__item
+                                a(href="https://vk.com/ykurbakov" target="_blank").socials__link
+                                    svg(width="30", height="17").socials__icon.icon-vk.icon-vk_color_white 
+                                        use(xlink:href="img/icons/sprite.svg#vk") 
+                            li.socials__item
+                                a(href="https://github.com/kyv81" target="_blank").socials__link
+                                    svg(width="26", height="22").socials__icon.icon-github.icon-github_color_white 
+                                        use(xlink:href="img/icons/sprite.svg#github")
+                            li.socials__item 
+                                a(href="https://www.facebook.com/profile.php?id=100009954705314" target="_blank").socials__link
+                                    svg(width="24", height="23").socials__icon.icon-in.icon-in_color_white
+                                        use(xlink:href="img/icons/sprite.svg#in")
+                    .hero__menu
+                        button.hamburger
+                            a(href="#").hamburger__link
+                                .hamburger__bars
+                .hero__title 
+                    .section-title
+                        img.section-title__pic(src="./img/bg/portfolio_header.svg")
+                    .hero__user
+                        .hero__user-pic
+                            img.hero__user-img(src="./img/content/my_photo.jpg")
+                        .hero__user-desc
+                            .hero__user-name Юрий Курбаков
+                            .hero__user-info Личный сайт веб-разработчика
+                .arrow
+                    a(href="#").arrow__link 
+                        svg(width="25" height="16").arrow__icon
+                            use(xlink:href="img/icons/sprite.svg#arrow_down")
+                
+            img(src="img/bg/bg.svg").triangle
+
+        section.section.works
+            .works__columns
+                .works__left
+                    .works__pic
+                        img(src="img/content/work-1.png").works__img
+                .works__right
+                    .works__site
+                        .works__site-title
+                            .block-subtitle.block-subtitle_align_left Сайт школы онлайн образования
+                        .works__site-desc
+                            .works__desc-title html, css, javascript
+                        button.works__site-btn
+                            .works__btn-content
+                                svg(width="19" height="19").works__btn-icon
+                                    use(xlink:href="img/icons/sprite.svg#link")
+                                span.works__btn-text Посмотреть сайт 
+            .arrows
+                svg(width="43" height="28").arrow-down
+                    use(xlink:href="img/icons/sprite.svg#portf_arrow_down")
+                svg(width="43" height="28").arrow-up
+                    use(xlink:href="img/icons/sprite.svg#portf_arrow_up")
+            .dots
+                .dot.dot_color_green
+                .dot.dot_color_white
+                .dot.dot_color_white
+                .dot.dot_color_white
+
+        section.section.what
+            .what__content
+                .what__title
+                        img(src="img/bg/about_header.svg").what__pic
+                        .block-title Что обо мне говорят
+                .what__comments
+                    .what__comments-left 
+                        .what__comments-quotes
+                            i.fa.fa-quote-left.left-quote
+                        .what__comments-text.text-content
+                            p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .what__comments-author
+                            .what__comments-pic
+                                img(src="img/content/loftschool_1.jpg").what__comments-img
+                            .what__comments-user
+                                .what__comments-name Ковальчук Дмитрий
+                                .what__comments-occ основатель Loftschool
+                    .what__comments-right
+                        .what__comments-quotes
+                            i.fa.fa-quote-left.left-quote
+                        .what__comments-text.text-content
+                            p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+                        .what__comments-author
+                            .what__comments-pic
+                                img(src="img/content/loftschool_2.jpg").what__comments-img
+                            .what__comments-user
+                                .what__comments-name Сабанцев Владимир
+                                .what__comments-occ главный преподаватель
+                form.form
+                    .form__bg
+                        .contact-form
+                            .contact-form__fields
+                                .contact-form__title
+                                    .block-subtitle Связаться со мной
+                                .contact-form__row
+                                    label(for="user-name").contact-form__name-label
+                                    input(type="text" placeholder="Имя" name="user-name").contact-form__name-input
+                                .contact-form__row       
+                                    label(for="user-email").contact-form__email-label
+                                    input(type="email" placeholder="Email" name="user-email").contact-form__email-input
+                                .contact-form__row
+                                    label(for="area").contact-form__textarea-label
+                                    textarea(name="area" placeholder="Ваше сообщение").contact-form__textarea
+                            .contact-form__btns
+                                button(type="submit" name="send" value="Отправить").contact-form__button-send Отправить
+                                button(type="reset" name="clear" value="Очистить").contact-form__button-clear Очистить
+
+                .arrow
+                    a(href="#").arrow__link 
+                        svg(width="25" height="16").arrow__icon.arrow__up
+                            use(xlink:href="img/icons/sprite.svg#arrow_down")
+                
+                include ../common/footer
+
+                
+
+                            
+
+                                   

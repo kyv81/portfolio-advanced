@@ -20,7 +20,9 @@
         border: 1px solid $white;
         border-radius: 50%;
         padding: 10px;
+        transition: 0.3s;
         &:hover {
+            border: none;
             background-repeat: no-repeat;
             background-position: center center;
             &.vk-round {

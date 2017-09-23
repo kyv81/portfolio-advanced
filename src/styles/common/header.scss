@@ -99,6 +99,8 @@
 .arrow {
     display: flex;
     justify-content: center;
+    z-index: 1000;
+    margin-bottom: 70px;
 }
 .arrow__link {
     display: inline-block;
