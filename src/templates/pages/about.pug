@@ -1,0 +1,139 @@
+extends ../template 
+
+block variables 
+    - var title = "Обо мне"
+
+block content 
+    .wrapper
+        include ../common/header.pug    
+        
+        section.section.about
+            .about__columns
+                .about__left
+                    .about__left-title
+                        img(src="img/bg/about_header.svg").about__left-pic
+                        .block-title Обо мне
+                    .about__left-content
+                        .user-desc
+                            .user-desc__img
+                                img(src="img/content/my_photo2.jpg").user-desc__avatar
+                            .user-desc__title
+                                .block-subtitle Кто я
+                            .user-desc__text.text-content
+                                p Я веб разработчик из Москвы. Мне 36 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .about__right
+                    .about__right-title
+                        .block-subtitle Чем я могу быть вам полезен
+                    .about__right-desc.text-content
+                        p Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
+                    .about__right-content
+                        ul.skills-list
+                            li.skill-list__item
+                                .skills-row
+                                    .skills-row__title Frontend
+                                    ul.skills-row__list
+                                        li.skills-row__item
+                                            .skill
+                                                svg(viewbox="0 0 110 110").skill__circle
+                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").skill__circle-second.circle-90
+                                                .skill__title HTML5
+                                        li.skills-row__item
+                                            .skill
+                                                svg(viewbox="0 0 110 110").skill__circle
+                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").skill__circle-second.circle-85
+                                                .skill__title CSS3
+                                        li.skills-row__item
+                                            .skill
+                                                svg(viewbox="0 0 110 110").skill__circle
+                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").skill__circle-second.circle-80
+                                                .skill__title JavaScript & jQuery
+                            li.skill-list__item
+                                .skills-row
+                                    .skills-row__title Backend
+                                    ul.skills-row__list
+                                        li.skills-row__item
+                                            .skill
+                                                svg(viewbox="0 0 110 110").skill__circle
+                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").skill__circle-second.circle-40
+                                                .skill__title PHP
+                                        li.skills-row__item
+                                            .skill
+                                                svg(viewbox="0 0 110 110").skill__circle
+                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").skill__circle-second.circle-55
+                                                .skill__title mySQL
+                                        li.skills-row__item
+                                            .skill
+                                                svg(viewbox="0 0 110 110").skill__circle
+                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").skill__circle-second.circle-45
+                                                .skill__title Node.js & npm
+                            li.skill-list__item
+                                .skills-row
+                                    .skills-row__title Workflow
+                                    ul.skills-row__list
+                                        li.skills-row__item
+                                            .skill
+                                                svg(viewbox="0 0 110 110").skill__circle
+                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").skill__circle-second.circle-85
+                                                .skill__title Git
+                                        li.skills-row__item
+                                            .skill
+                                                svg(viewbox="0 0 110 110").skill__circle
+                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").skill__circle-second.circle-75
+                                                .skill__title Gulp
+                                        li.skills-row__item
+                                            .skill
+                                                svg(viewbox="0 0 110 110").skill__circle
+                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").skill__circle-second.circle-55
+                                                .skill__title Yarn
+
+        section.section.map
+            .some-map
+            img(src="img/content/map.png").google-map
+            .contacts
+                .contacts__title
+                    .block-subtitle Контакты
+                ul.contacts__list
+                    li.contacts__item
+                        .contacts-row
+                            a.contacts__link(href="skype:nofat34me")
+                                svg(width="24", height="24").contacts-row__icon 
+                                    use(xlink:href="img/icons/sprite.svg#skype")
+                                span.contacts-row__content n0fat34me
+                    li.contacts__item
+                        .contacts-row
+                            a.contacts__link(href="mailto:k.blvrrr@yandex.ru")
+                                svg(width="22", height="17").contacts-row__icon 
+                                    use(xlink:href="img/icons/sprite.svg#envelope")
+                                span.contacts-row__content k.blvrrr@yandex.ru
+                    li.contacts__item
+                        .contacts-row
+                            a.contacts__link(href="phone:+7981536933")
+                                svg(width="19", height="19").contacts-row__icon 
+                                    use(xlink:href="img/icons/sprite.svg#phone")
+                                span.contacts-row__content +7 985 153 69 33
+                    li.contacts__item
+                        .contacts-row
+                            a.contacts__link(href="#")
+                                svg(width="15", height="22").contacts-row__icon 
+                                    use(xlink:href="img/icons/sprite.svg#map_marker")
+                                span.contacts-row__content г.Новосибирск, ул. Инская, д. 5
+            .separate-marker
+                svg(width="50", height="50") 
+                    use(xlink:href="img/icons/sprite.svg#map_marker")
+
+        include ../common/footer.pug  
+                
+
+
+
+        

@@ -1,8 +1,14 @@
 // common 
 @import 'common/normalize';
 @import 'common/fonts';
-@import 'common/base';
 @import 'common/vars';
+@import 'common/mixins';
+@import 'common/base';
+@import 'common/header';
+@import 'common/socials';
+@import 'common/skills';
+@import 'common/footer';
 
 // pages
 @import 'pages/intro';
+@import 'pages/about';
