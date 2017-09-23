@@ -267,6 +267,7 @@
     border-radius: 5px;
     overflow: hidden;
     border: none;
+    outline: none;
     @include placeholder {
         font-family: 'robotoregular';
         color: $title;
