@@ -8,7 +8,18 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 30px;
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @include phones {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
+
 .footer__row + .footer__row {
     border-top: 1px solid rgba(#fff, 0.1);
 }
@@ -21,11 +32,19 @@
 }
 .menu__item + .menu__item {
     margin-left: 40px;
+
+    @include phones {
+        margin-left: 10px;
+    }
 }
 .menu__link {
     text-decoration: none;
     color: #fff;
     padding: 0 5px;
+
+    @include phones {
+        white-space: nowrap;
+    }
 }
 .footer__text, .footer__copyright {
     font-family: 'robotolight';
@@ -35,6 +54,12 @@
 }
 .footer__text {
     width: 35%;
+
+    @include tablets {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+    }
 }
 .footer__copyright {
     @include flex;

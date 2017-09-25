@@ -17,9 +17,12 @@ block content
                                     svg(width="24", height="23").socials__icon.icon-in.icon-in_color_white
                                         use(xlink:href="img/icons/sprite.svg#in")
                     .hero__menu
-                        button.hamburger
-                            a(href="#").hamburger__link
-                                .hamburger__bars
+                        div.hamburger
+                            span.hamburger__bar
+                            span.hamburger__bar
+                            span.hamburger__bar
+
+
                 .hero__title 
                     .section-title
                         img.section-title__pic(src="./img/bg/portfolio_header.svg")
@@ -33,11 +36,9 @@ block content
                     a(href="#").arrow__link 
                         svg(width="25" height="16").arrow__icon
                             use(xlink:href="img/icons/sprite.svg#arrow_down")
-                        
-                
-            .triangles
-                svg.triangle__block(xmlns="http://www.w3.org/2000/svg"
-                            viewbox="0 0 1000 85"
-                            preserveaspectratio="none")
-                    polygon.triangle__left(points="0,0 0,86 500.8,86 500.8,75.5")
-                    polygon.triangle__right(points="1000,0 1000,86 500,86 500,75.5")
+
+                .triangle
+                    svg(width="50%" height="100px" viewbox="0 0 100 100" preserveaspectratio="none").triangle__left
+                        polygon(points="0,100 0,0 100,100").triangle__left-polygon
+                    svg(width="50%" height="100px" viewbox="0 0 100 100" preserveaspectratio="none").triangle__right
+                        polygon(points="0,100 100,0 100,100").triangle__right-polygon    

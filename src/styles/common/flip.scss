@@ -1,0 +1,22 @@
+.flip-effect {
+    width: 385px;
+    height: 420px;
+    position: relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+.flip-effect .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+.flip-effect .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+    transition: 1s;
+}

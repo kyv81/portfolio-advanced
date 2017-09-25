@@ -23,9 +23,11 @@ block content
                                     svg(width="24", height="23").socials__icon.icon-in.icon-in_color_white
                                         use(xlink:href="img/icons/sprite.svg#in")
                     .hero__menu
-                        button.hamburger
-                            a(href="#").hamburger__link
-                                .hamburger__bars
+                        div.hamburger
+                            span.hamburger__bar
+                            span.hamburger__bar
+                            span.hamburger__bar
+                            
                 .hero__user
                         .hero__user-pic
                             img.hero__user-img(src="./img/content/my_photo.jpg")
@@ -38,19 +40,19 @@ block content
                             .hero__blog-text.text-content
                                 p Статьи, которые я написал
 
-            .triangles
-                svg.triangle__block(xmlns="http://www.w3.org/2000/svg"
-                            viewbox="0 0 1000 85"
-                            preserveaspectratio="none")
-                    polygon.triangle__left.triangle__blog(points="0,0 0,86 500.8,86 500.8,75.5")
-                    polygon.triangle__right.triangle__blog(points="1000,0 1000,86 500,86 500,75.5")
+                .triangle
+                    svg(width="50%" height="100px" viewbox="0 0 100 100" preserveaspectratio="none").triangle__left
+                        polygon(points="0,100 0,0 100,100")
+                    svg(width="50%" height="100px" viewbox="0 0 100 100" preserveaspectratio="none").triangle__right
+                        polygon(points="0,100 100,0 100,100")
+
 
         main.main
             aside.sidebar
                 nav.nav
                     ul.nav__list
                         li.nav__item 
-                            a(href="#").nav__link.nav__link_active Самое важное в SASS
+                            a(href="#").nav__link Самое важное в SASS
                         li.nav__item 
                             a.a(href="#").nav__link Приемы в верстке, без которых не обходится ни один сайт
                         li.nav__item

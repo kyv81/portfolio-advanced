@@ -9,31 +9,71 @@
 .auth {
     margin: 24px 20px 0 0;
     align-self: flex-end;
+
+    @include phones {
+        align-self: center;
+    }
 }
 .auth__button {
+    position: relative;
+    display: block;
+    width: 180px;
+    height: 45px;
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 13px 27px;
-    background-color: transparent;
+    background: none;
+    outline: none;
+    overflow: hidden;
     cursor: pointer;
-    transition: 0.3s;
-    &:hover {
+    transition: all 0.7s;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
         background-color: #fff;
-        & .auth__txt {
+        transition: all 0.7s;
+    }
+    &:hover:before {
+        opacity: 1;
+        width: 100%;
+    }
+    &:hover {
+        .auth__text {
             color: $green;
         }
     }
 }
-.auth__txt {
-    color: #fff; 
+.auth__text {
+    color: #fff;
+    z-index: 2;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .welcome {
     @include flex;
+    width: 385px;
     background-color: rgba($white, 0.85);
     border-radius: 5px;
     overflow: hidden;
     padding-top: 40px;
     margin-bottom: 30px;
+
+    @include tablets {
+        width: 350px;
+    }
+
+    @include phones {
+        width: 100%;
+    }
 }
 .welcome__pic {
     width: 140px;
@@ -64,12 +104,14 @@
     margin-bottom: 40px;
 }
 .welcome__list {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: $green;
     border-radius: 0 0 5px 5px;
 }
 .welcome__item {
+    width: 100%;
     border-right: 2px solid $light;
     transition: 0.3s;
     &:last-child {
@@ -92,4 +134,9 @@
     color: #fff;
     max-width: 450px;
     margin-bottom: 30px;
+
+    @include phones {
+        text-align: center;
+        width: 80%;
+    }
 }
