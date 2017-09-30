@@ -57,6 +57,10 @@
         &:after {
             right: 0;
         }
+
+    @include phones {
+        font-size: 25px;
+    }
     }
 }
 .contact-form__row {

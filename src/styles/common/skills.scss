@@ -2,8 +2,10 @@
     margin-bottom: 40px;
 }
 .skills-row {
+
     @include tablets {
         @include flex;
+        text-align: center;
     }
 }
 .skills-row__title {
@@ -25,6 +27,12 @@
 }
 .skills-row__item + .skills-row__item {
     margin-left: 37px;
+}
+.skills-row__item + .skills-row__item:last-child {
+    
+    @include phones {
+        margin-left: 0;
+    }
 }
 .skill__circle {
     fill: none;

@@ -49,7 +49,7 @@
     }
 
     @include phones {
-        width: 100%;
+        width: 95%;
     }
 }
 .user-desc__avatar {
@@ -120,6 +120,10 @@
             right: 0;
         }
     }
+
+    @include phones {
+        width: 100%;
+    }
 }
 .about__right-desc {
     padding: 40px 30px 60px 40px;
@@ -152,6 +156,10 @@
 }
 .google-map {
     width: 100%;
+
+    @include phones {
+        width: auto;
+    }
 }
 .contacts {
     width: 380px;
@@ -171,8 +179,9 @@
     }
 
     @include phones {
-        top: 17%;
-        left: 35%;
+        top: 0;
+        left: 0;
+        transform: none;
     }
 }
 .contacts__title {

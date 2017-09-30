@@ -1,11 +1,6 @@
 .form-auth {
-    width: 385px;
     border-radius: 5px;
     overflow: hidden;
-    
-    @include tablets {
-        width: 350px;
-    }
 }
 .auth-form {
     padding-top: 37px;

@@ -60,20 +60,11 @@
 }
 .welcome {
     @include flex;
-    width: 385px;
     background-color: rgba($white, 0.85);
     border-radius: 5px;
     overflow: hidden;
     padding-top: 40px;
     margin-bottom: 30px;
-
-    @include tablets {
-        width: 350px;
-    }
-
-    @include phones {
-        width: 100%;
-    }
 }
 .welcome__pic {
     width: 140px;
@@ -127,6 +118,10 @@
     transition: 0.3s;
     &:hover {
         background-color: $dark;
+    }
+
+    @include phones {
+        padding: 15px;
     }
 }
 .copyright {

@@ -97,6 +97,10 @@
     @include tablets {
         margin-bottom: 50px;
     }
+
+    @include phones {
+        margin-bottom: 120px;
+    }
 }
 .article {
     width: 63%;

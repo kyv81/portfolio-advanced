@@ -13,15 +13,17 @@
         flex-direction: column;
         align-items: center;
     }
-
-    @include phones {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
 }
 
 .footer__row + .footer__row {
     border-top: 1px solid rgba(#fff, 0.1);
+}
+.menu {
+    
+    @include phones {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 .menu__list {
     display: flex;
@@ -44,6 +46,7 @@
 
     @include phones {
         white-space: nowrap;
+        padding: 0;
     }
 }
 .footer__text, .footer__copyright {
@@ -64,4 +67,8 @@
 .footer__copyright {
     @include flex;
     justify-content: flex-end;
+
+    @include phones {
+        text-align: center;
+    }
 }
