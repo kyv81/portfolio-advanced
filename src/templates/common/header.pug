@@ -1,44 +1,45 @@
 block content
-        section.section.hero
+        section.section.hero#parallaxScroll
             .hero__bg
-                .hero__header
-                    .hero__socials
-                        ul.socials
-                            li.socials__item
-                                a(href="https://vk.com/ykurbakov" target="_blank").socials__link
-                                    svg(width="30", height="17").socials__icon.icon-vk.icon-vk_color_white 
-                                        use(xlink:href="img/icons/sprite.svg#vk") 
-                            li.socials__item
-                                a(href="https://github.com/kyv81" target="_blank").socials__link
-                                    svg(width="26", height="22").socials__icon.icon-github.icon-github_color_white 
-                                        use(xlink:href="img/icons/sprite.svg#github")
-                            li.socials__item 
-                                a(href="https://www.facebook.com/profile.php?id=100009954705314" target="_blank").socials__link
-                                    svg(width="24", height="23").socials__icon.icon-in.icon-in_color_white
-                                        use(xlink:href="img/icons/sprite.svg#in")
-                    .hero__menu
-                        div.hamburger
-                            span.hamburger__bar
-                            span.hamburger__bar
-                            span.hamburger__bar
+                img(src="img/bg/bg.jpg").hero__bg-img
+            .hero__header
+                .hero__socials
+                    ul.socials
+                        li.socials__item
+                            a(href="https://vk.com/ykurbakov" target="_blank").socials__link
+                                svg(width="30", height="17").socials__icon.icon-vk.icon-vk_color_white 
+                                    use(xlink:href="img/icons/sprite.svg#vk") 
+                        li.socials__item
+                            a(href="https://github.com/kyv81" target="_blank").socials__link
+                                svg(width="26", height="22").socials__icon.icon-github.icon-github_color_white 
+                                    use(xlink:href="img/icons/sprite.svg#github")
+                        li.socials__item 
+                            a(href="https://www.facebook.com/profile.php?id=100009954705314" target="_blank").socials__link
+                                svg(width="24", height="23").socials__icon.icon-in.icon-in_color_white
+                                    use(xlink:href="img/icons/sprite.svg#in")
+                .hero__menu
+                    div.hamburger
+                        span.hamburger__bar
+                        span.hamburger__bar
+                        span.hamburger__bar
 
 
-                .hero__title 
-                    .section-title
-                        img.section-title__pic(src="./img/bg/portfolio_header.svg")
-                    .hero__user
-                        .hero__user-pic
-                            img.hero__user-img(src="./img/content/my_photo.jpg")
-                        .hero__user-desc
-                            .hero__user-name Юрий Курбаков
-                            .hero__user-info Личный сайт веб-разработчика
-                .arrow
-                    a(href="#").arrow__link 
-                        svg(width="25" height="16").arrow__icon
-                            use(xlink:href="img/icons/sprite.svg#arrow_down")
+            .hero__title 
+                .section-title
+                    img.section-title__pic(src="./img/bg/portfolio_header.svg")
+            .hero__user
+                .hero__user-pic
+                    img.hero__user-img(src="./img/content/my_photo.jpg")
+                .hero__user-desc
+                    .hero__user-name Юрий Курбаков
+                    .hero__user-info Личный сайт веб-разработчика
+            .arrow
+                a(href="#about").arrow__link.scroll 
+                    svg(width="25" height="16").arrow__icon
+                        use(xlink:href="img/icons/sprite.svg#arrow_down")
 
-                .triangle
-                    svg(width="50%" height="100px" viewbox="0 0 100 100" preserveaspectratio="none").triangle__left
-                        polygon(points="0,100 0,0 100,100").triangle__left-polygon
-                    svg(width="50%" height="100px" viewbox="0 0 100 100" preserveaspectratio="none").triangle__right
-                        polygon(points="0,100 100,0 100,100").triangle__right-polygon    
+            .triangle
+                svg(width="50%" height="100px" viewbox="0 0 100 100" preserveaspectratio="none").triangle__left
+                    polygon(points="0,100 0,0 100,100").triangle__left-polygon
+                svg(width="50%" height="100px" viewbox="0 0 100 100" preserveaspectratio="none").triangle__right
+                    polygon(points="0,100 100,0 100,100").triangle__right-polygon    

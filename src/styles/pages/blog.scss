@@ -10,6 +10,40 @@
 .triangle__right {
     @extend .triangle__left;
 }
+.nav-hamb {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    bottom: 0;
+    left: 0;
+    background-color: $green;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding-top: 600px;
+    display: none;
+}
+.nav-hamb.active {
+    display: flex;
+}
+.nav-hamb__item {
+    margin-bottom: 37px;
+}
+.nav-hamb__link {
+    display: block;
+    text-decoration: none;
+    font-family: 'robotoregular';
+    line-height: 26px;
+    color: #fff;
+    opacity: 0.7;
+    text-align: right;
+    padding: 10px 0;
+    padding-right: 18px;
+}
+.nav-hamb__link.active {
+    font-family: 'robotobold';
+    opacity: 1;
+}
 .hero__bg-blog {
     height: 100vh;
 }
@@ -22,7 +56,7 @@
 .hero__blog-pic {
     opacity: 0.07;
 }
-.hero__blog__info {
+.hero__blog-info {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,18 +91,33 @@
     padding-top: 70px;
     display: flex;
     margin-bottom: 170px;
-}
-.sidebar {
-    @include tablets {
-        display: none;
-    }
+    position: relative;
 }
 .nav {
     padding-left: 40px;
+    @include tablets {
+        padding-left: 0;
+    }
+}
+.nav__swipe {
+    position: absolute;
+    top: 8%;
+    display: none;
+
+    @include phones {
+        display: flex;
+    }
+}
+.nav__swipe.active {
+    right: 6%;
 }
 .nav__list {
     min-width: 380px;
     text-align: right;
+
+    @include tablets {
+        display: none;
+    }
 }
 .nav__item {
     margin-bottom: 37px;
@@ -92,6 +141,9 @@
     color: $green;
     border-right: 3px solid $green;
 }
+.main {
+    position: relative;
+}
 .main-content {
     
     @include tablets {
@@ -99,7 +151,7 @@
     }
 
     @include phones {
-        margin-bottom: 120px;
+        margin-bottom: 150px;
     }
 }
 .article {

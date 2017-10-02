@@ -4,12 +4,12 @@ var webpack = require('webpack'),
 var config = {
     output: {
         filename: 'bundle.js'
-    },
-    plugins: [
-        new uglifyJSPlugin({
-            sourceMap: true 
-        })
-    ]
+    }
+    // plugins: [
+    //     new uglifyJSPlugin({
+    //         sourceMap: true 
+    //     })
+    // ]
 };
 
 module.exports = config;

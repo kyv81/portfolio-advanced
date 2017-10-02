@@ -5,6 +5,21 @@ block variables
 
 block content 
     .wrapper
+        .hamb
+            ul.hamb__list
+                li.hamb__item
+                    .block-title.block-title_color_white 
+                        a(href="works.html").hamb__link Мои работы
+                li.hamb__item
+                    .block-title.block-title_color_white 
+                        a(href="blog.html").hamb__link Блог
+                li.hamb__item
+                    .block-title.block-title_color_white 
+                        a(href="about.html").hamb__link Обо мне
+                li.hamb__item
+                    .block-title.block-title_color_white 
+                        a(href="index.html").hamb__link Авторизация
+
         section.section.hero.hero-works
             .hero__bg
                 .hero__header
@@ -38,13 +53,13 @@ block content
                             .hero__user-name Юрий Курбаков
                             .hero__user-info Личный сайт веб-разработчика
                 .arrow
-                    a(href="#").arrow__link 
+                    a(href="#works").arrow__link.scroll 
                         svg(width="25" height="16").arrow__icon
                             use(xlink:href="img/icons/sprite.svg#arrow_down")
                 
-            img(src="img/bg/bg.svg").triangle
+                img(src="img/bg/bg.svg").triangle
 
-        section.section.works
+        section.section.works#works
             .works__columns
                 .works__left
                     .works__pic
@@ -119,7 +134,7 @@ block content
                                 button(type="reset" name="clear" value="Очистить").contact-form__button-clear Очистить
 
                 .arrow
-                    a(href="#").arrow__link 
+                    a(href="#works").arrow__link.scroll 
                         svg(width="25" height="16").arrow__icon.arrow__up
                             use(xlink:href="img/icons/sprite.svg#arrow_down")
                 

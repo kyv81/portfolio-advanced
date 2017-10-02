@@ -3,8 +3,15 @@ extends ../template
 block variables
     - var title = 'Главная'
 
-block content 
+block content
+    .preloader
+        .preloader__inner
+            .preloader__spinner
+                .preloader__animation
+                .preloader__percents 
+
     .wrapper.intro
+
         .auth
             button.auth__button 
                 span.auth__text Авторизоваться
@@ -37,31 +44,34 @@ block content
                         li.welcome__item  
                             a(href="blog.html").welcome__link Блог
             .back
-                form.form-auth 
+                form.form-auth#auth
                     .auth-form
                         .auth-form__fields
                             .auth-form__title
                                 .block-subtitle Авторизуйтесь
+                            .auth-form__field#field
+                            .auth-form__fail#fail
                             .auth-form__row
                                 label(for="user-login").auth-form__login-label
                                 .auth-form__login-wrap
-                                    .auth-form__login-icon
-                                        i.fa.fa-user.user-icon 
-                                    input(type="text" placeholder="Логин" name="user-login").auth-form__login-input
+                                    .auth-form__login-icon#login-icon
+                                        i.fa.fa-user.user-icon#user-icon
+                                    input(type="text" placeholder="Логин" name="user-login").auth-form__login-input#login-input
                             .auth-form__row       
                                 label(for="user-password").auth-form__password-label
                                 .auth-form__password-wrap
-                                    .auth-form__password-icon
-                                        i.fa.fa-key.key-icon
-                                    input(type="password" placeholder="Пароль" name="user-password").auth-form__password-input
+                                    .auth-form__password-icon#password-icon
+                                        i.fa.fa-key.key-icon#key-icon
+                                    input(type="password" placeholder="Пароль" name="user-password").auth-form__password-input#password-input
                             .auth-form__row    
                                 .auth-form__checkbox
                                     input(type="checkbox")#check.auth-form__check-input
                                     label(for="check").auth-form__check-label Я человек
                             .auth-form__row
-                                .auth-form__radio-buttons
+                                .auth-form__radio-heading Вы точно не робот?
+                                .auth-form__radio-buttons 
                                     label.auth-form__radio
-                                        input(type="radio" name="robot").auth-form__radio-elem
+                                        input(type="radio" name="robot").auth-form__radio-elem#notrobot
                                         .auth-form__radio-fake
                                         .auth-form__radio-title Да
                                     label.auth-form__radio
@@ -70,7 +80,7 @@ block content
                                         .auth-form__radio-title Нет
                         .auth-form__btns
                             button(type="button" name="main" value="На главную").auth-form__button-main На главную
-                            button(type="button" name="enter" value="Войти").auth-form__button-enter Войти
+                            button(type="submit" name="enter" value="Войти").auth-form__button-enter Войти
 
 
         .copyright © Юрий Курбаков | создано с любовью в LoftSchool | 2017

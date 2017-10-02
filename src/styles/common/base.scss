@@ -17,9 +17,91 @@ body {
     position: relative;
     overflow: hidden;
 }
+.hamb {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($green, 0.87);
+    z-index: 100;
+    justify-content: center;
+    padding-top: 95px;
+    display: none;
+
+    @include tablets {
+        padding-top: 270px;
+    }
+
+    @include phones {
+        padding-top: 150px;
+    }
+}
+.hamb.active {
+    display: flex;
+}
+
+.hamb__item {
+    position: relative;
+    padding: 0 40px;
+    margin-bottom: 87px;
+
+    @include phones {
+        margin-bottom: 25px;
+    }
+
+    .block-title {
+        
+        @include tablets {
+            font-size: 49px;
+        }
+
+        @include phones {
+            font-size: 35px;
+        }
+
+        &:before, &:after {
+            display: none;
+        }
+    }
+}
+.hamb__link {
+    color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    padding: 0 40px;
+    position: relative;
+    transition: 0.3s;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:before, &:after {
+        content: '';
+        display: block;
+        width: 22px;
+        height: 5px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $grey;
+        opacity: 0.5;  
+    }
+    &:before {
+        left: 0;
+    }
+    &:after {
+        right: 0;
+    }
+    &:hover:before, &:hover:after {
+        opacity: 1;
+        background-color: #fff;
+    }
+}
 .section {
     width: 100%;
     height: 100%;
+    min-height: 650px;
+    overflow: hidden;
 }
 .section-title {
     width: 100%;
@@ -90,4 +172,7 @@ li {
 p {
     margin: 0;
     padding: 0;
+}
+::-webkit-validation-bubble-message {
+    background-color: red;
 }
