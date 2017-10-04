@@ -1,13 +1,19 @@
-.triangle__block {
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-    .triangle__left {
-        fill: $left-col;
-    }
-    .triangle__right {
-        fill: $right-col;
-    }
+.triangle {
+    width: 100%;
+    display: flex;
+}
+.triangle__left {
+    width: 50%;
+    height: 100px;
+}
+.triangle__left-polygon {
+    fill: $left-col;
+}
+.triangle__right {
+    @extend .triangle__left;
+}
+.triangle__right-polygon {
+    fill: $right-col;
 }
 .hero {
     background: url('../img/bg/bg.jpg') top center no-repeat;
@@ -18,7 +24,7 @@
 }
 .hero__bg {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
     background-color: rgba($darkgreen, 0.3);
     display: flex;
@@ -30,40 +36,34 @@
     display: flex;
     justify-content: space-between;
     padding: 25px 30px;
+
+    @include phones {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 .hamburger {
     background-color: transparent;
     border: none;
+    @include flex;
+    cursor: pointer;
 }
-.hamburger__link {
-    display: flex;
-    align-items: center;
+.hamburger__bar {
+    display: block;
     width: 40px;
-    height: 35px;
-    position: relative;
+    height: 5px;
+    background-color: #fff;
+    margin-bottom: 10px;
     transition: 0.3s;
-    &:hover {
-        transform: scale(1.2);
-    }
 }
-.hamburger__bars {
-    &, &:before, &:after {
-        width: 100%;
-        height: 5px;
-        background-color: #fff;
-        border-radius: 3px;
-    }
-    &:before, &:after {
-        content: '';
-        display: block;
-        position: absolute;
-    }
-    &:before {
-        top: 0;
-    }
-    &:after {
-        bottom: 0;
-    }
+.hamburger.active .hamburger__bar:nth-child(1) {
+    transform: rotate(45deg) translateY(10px) translateX(11.33px);
+}
+.hamburger.active .hamburger__bar:nth-child(2){
+    opacity: 0;
+}
+.hamburger.active .hamburger__bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px) translateX(11.33px);
 }
 .hero__title {
     @include flex;

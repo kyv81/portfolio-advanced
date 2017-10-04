@@ -1,0 +1,36 @@
+.flip-effect {
+    width: 385px;
+    height: 420px;
+    position: relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+
+    @include tablets {
+        width: 80%;
+    }
+
+    @include tablets {
+        width: 50%;
+    }
+
+    @include phones {
+        width: 90%;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+}
+.flip-effect .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+.flip-effect .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(-180deg);
+    transition: 1s;
+}

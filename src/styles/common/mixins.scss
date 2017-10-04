@@ -10,3 +10,8 @@
     &::-moz-placeholder          { @content; }
     &:-ms-input-placeholder      { @content; }  
   }
+@mixin circle($width) {
+    width: $width;
+    height: $width;
+    border-radius: $width/2;
+}

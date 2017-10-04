@@ -1,8 +1,16 @@
 .about__columns {
     display: flex;
+
+    @include tablets {
+        display: block;
+    }
 }
 .about__left, .about__right {
     width: 50%;
+
+    @include tablets {
+        width: 100%;
+    }
 }
 .about__left {
     background-color: $left-col;
@@ -25,12 +33,24 @@
 .user-desc {
     @include flex;
     padding: 0 80px;
+
+    @include phones {
+        padding: 0;
+    }
 }
 .user-desc__img {
     width: 100%;
     height: 500px;
     overflow: hidden;
     margin-bottom: 35px;
+
+    @include tablets {
+        width: 80%;
+    }
+
+    @include phones {
+        width: 95%;
+    }
 }
 .user-desc__avatar {
     max-width: 100%;
@@ -63,6 +83,17 @@
     p {
         margin-bottom: 15px;
     }
+
+    @include tablets {
+        align-self: center;
+        width: 80%;
+    }
+
+    @include phones {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 .about__right {
     background-color: $right-col;
@@ -89,19 +120,46 @@
             right: 0;
         }
     }
+
+    @include phones {
+        width: 100%;
+    }
 }
 .about__right-desc {
     padding: 40px 30px 60px 40px;
+
+    @include tablets {
+        width: 75%;
+    }
+
+    @include phones {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 .about__right-content {
     align-self: flex-start;
     margin-left: 40px;
+
+    @include tablets {
+        align-self: center;
+        margin-left: 0;
+    }
 }
 .map {
     position: relative;
+
+    @include tablets {
+        height: 860px;
+    }
 }
 .google-map {
     width: 100%;
+
+    @include phones {
+        width: auto;
+    }
 }
 .contacts {
     width: 380px;
@@ -115,6 +173,16 @@
     overflow: hidden;
     padding: 35px;
     @include flex;
+
+    @include tablets {
+        top: 36%;
+    }
+
+    @include phones {
+        top: 0;
+        left: 0;
+        transform: none;
+    }
 }
 .contacts__title {
     margin-bottom: 40px;

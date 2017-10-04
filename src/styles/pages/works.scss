@@ -13,15 +13,36 @@
     display: flex;
     height: 100%;
     position: relative;
+
+    @include tablets {
+        flex-direction: column;
+    }
 }
 .works__left {
     width: 40%;
     margin-left: 10%;
+
+    @include tablets {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    @include phones {
+        @include flex;
+    }
 }
 .works__pic {
     width: 100%;
     height: 100%;
     margin-bottom: -10px;
+
+    @include tablets {
+        @include flex;
+    }
+
+    @include phones {
+        width: 75%;
+    }
 }
 .works__img  {
     max-width: 100%;
@@ -29,36 +50,101 @@
 .works__right {
     width: 40%;
     margin-right: 10%;
+
+    @include tablets {
+        width: 100%;
+        margin-right: 0;
+        order: -1;
+        margin-bottom: 100px;
+    }
 }
 .works__site {
     height: 100%;
     @include flex;
     align-items: flex-start;
     padding-left: 100px;
+
+    @include tablets {
+        padding-left: 0;
+        align-items: center;
+    }
 }
 .works__site-title {
-    width: 50%;
+    width: 90%;
     margin-bottom: 40px;
+    .block-subtitle_align_left {
+
+        @include phones {
+            text-align: center;
+        }
+    }
+
+    @include tablets {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    @include phones {
+        width: 80%;
+        margin-bottom: 20px;
+    }
 }
 .works__site-desc {
     margin-bottom: 40px;
     border-top: 1px solid rgba($darkengreen, 0.3);
     border-bottom: 1px solid rgba($darkengreen, 0.3);
     width: 90%;
+
+    @include tablets {
+        width: 50%;
+    }
+
+    @include phones {
+        width: 100%;
+    }
 }
 .works__desc-title {
     color: $green;
     text-transform: uppercase;
     padding: 20px 0;
+
+    @include tablets {
+        text-align: center;
+    }
+
+    @include phones {
+        padding: 10px 0;
+    }
 }
 .works__site-btn {
+    position: relative;
+    display: block;
     background-color: $green;
     border: none;
+    outline: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
-    &:hover {
+    overflow: hidden;
+    transition: all 0.7s;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
         background-color: #fff;
+        transition: all 0.7s;
+    }
+    &:hover:before {
+        opacity: 1;
+        width: 100%;
+    }
+    &:hover {
         .works__btn-icon {
             fill: $green;
         }
@@ -74,10 +160,12 @@
 }
 .works__btn-icon {
     fill: #fff;
+    z-index: 2;
 }
 .works__btn-text {
     color: #fff;
     margin-left: 10px;
+    z-index: 2;
 }
 .arrows {
     fill: $green;
@@ -110,6 +198,10 @@
     transform: translateX(-45%);
     bottom: 5%;
     display: flex;
+
+    @include tablets {
+        bottom: 2%;
+    }
 }
 .dot {
     width: 11px;
@@ -146,6 +238,11 @@
     position: relative;
     text-align: center;
     margin-bottom: 70px;
+
+    @include phones {
+        margin-bottom: 30px;
+    }
+
     .block-title {
         position: absolute;
         top: 50%;
@@ -167,6 +264,10 @@
         &:after {
             right: 0;
         }
+
+        @include phones {
+            font-size: 60px;
+        }
     }
 }
 .what__pic {
@@ -179,6 +280,10 @@
     color: $title;
     opacity: 0.2;
     margin-bottom: 30px;
+
+    @include phones {
+        margin-bottom: 20px;
+    }
 }
 .what__comments {
     display: flex;
@@ -186,17 +291,52 @@
     width: 100%;
     height: 260px;
     margin-bottom: 70px;
+
+    @include tablets {
+        width: 95%;
+    }
+
+    @include phones {
+        @include flex;
+        height: auto;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+.what__comments-quotes {
+    
+    @include phones {
+        text-align: center;
+    }
 }
 .what__comments-left, .what__comments-right {
     max-width: 370px;
     height: 100%;
     max-height: 100%;
+
+    @include phones {
+        max-width: 100%;
+    }
 }
 .what__comments-left {
     margin-right: 20px;
+    width: 100%;
+
+    @include phones {
+        margin-right: 0;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-bottom: 30px;
+    }
 }
 .what__comments-right {
-    margin-left: 20px;
+    margin-left: 20px; 
+    
+    @include phones {
+        margin-left: 0;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 }
 .what__comments-text {
     margin-bottom: 30px;
@@ -224,83 +364,8 @@
 .what__comment-occ {
     font-family: 'robotoregular';
 }
-.form {
-    width: 385px;
-    margin-bottom: 70px;
-    padding-top: 37px;
-    background-color: rgba(#fff, 0.5);
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    position: relative;
-    // filter: blur(5px);
-}
-.contact-form__fields {
-    padding: 0 20px;
-}
-.contact-form__title {
-    margin-bottom: 40px;
-    .block-subtitle {
-        &:before, &:after {
-            content: '';
-            display: block;
-            width: 22px;
-            height: 5px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: $grey;  
-        }
-        &:before {
-            left: 0;
-        }
-        &:after {
-            right: 0;
-        }
-    }
-}
-.contact-form__row {
-    margin-bottom: 20px;
-}
-.contact-form__name-input {
-    width: 100%;
-    padding: 18px 20px;
-    border-radius: 5px;
-    overflow: hidden;
-    border: none;
-    outline: none;
-    @include placeholder {
-        font-family: 'robotoregular';
-        color: $title;
-        opacity: 0.5;
-    }
-}
-.contact-form__email-input {
-    @extend .contact-form__name-input;
-}
-.contact-form__textarea {
-    @extend .contact-form__name-input;
-    resize: none;
-    height: 140px;
-}
-.contact-form__btns {
-    display: flex;
-    justify-content: center;
-}
-.contact-form__button-send, .contact-form__button-clear {
-    width: 50%;
-    padding: 15px;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-}
-.contact-form__button-send {
-    background-color: $lightergreen;
-    border-right: 1px solid $lightgrey;
-}
-.contact-form__button-clear {
-    background-color: $darkergreen;
-}
 .arrow__up {
+    margin-bottom: 103px;
     transform: rotate(180deg);
     opacity: 0.7;
     transition: 0.3s;

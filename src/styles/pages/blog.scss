@@ -1,10 +1,14 @@
-.triangle__block {
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-    .triangle__blog {
-        fill: #fff;;
-    }
+.triangle {
+    width: 100%;
+    display: flex;
+}
+.triangle__left {
+    width: 50%;
+    height: 100px;
+    fill: #fff;
+}
+.triangle__right {
+    @extend .triangle__left;
 }
 .hero__bg-blog {
     height: 100vh;
@@ -54,6 +58,11 @@
     display: flex;
     margin-bottom: 170px;
 }
+.sidebar {
+    @include tablets {
+        display: none;
+    }
+}
 .nav {
     padding-left: 40px;
 }
@@ -63,7 +72,11 @@
 }
 .nav__item {
     margin-bottom: 37px;
-    
+}
+.nav__item.active {
+    font-family: 'robotobold';
+    color: $green;
+    border-right: 3px solid $green;
 }
 .nav__link {
     display: block;
@@ -73,10 +86,20 @@
     color: $black;
     padding: 10px 0;
     padding-right: 18px;
-    &_active {
-        font-family: 'robotobold';
-        color: $green;
-        border-right: 3px solid $green;
+}
+.nav__link.active {
+    font-family: 'robotobold';
+    color: $green;
+    border-right: 3px solid $green;
+}
+.main-content {
+    
+    @include tablets {
+        margin-bottom: 50px;
+    }
+
+    @include phones {
+        margin-bottom: 120px;
     }
 }
 .article {
@@ -85,18 +108,36 @@
     margin-bottom: 70px;
     .block-subtitle {
         margin-bottom: 30px;
+
+        @include tablets {
+            margin-bottom: 20px;
+        }
+    }
+
+    @include tablets {
+        width: 95%;
+        margin-left: 23px;
+    }
+
+    @include phones {
+        width: 90%;
     }
 }
 .article__date {
     font-family: 'robotoregular';
     color: $green;
     margin-bottom: 27px;
+
+    @include tablets {
+        margin-bottom: 20px;
+    }
 }
 .article__text p {
     margin-bottom: 20px;
 }
 .article__example {
     max-width: 100%;
+    width: 100%;
 }
 .article__end {
     height: 70px;

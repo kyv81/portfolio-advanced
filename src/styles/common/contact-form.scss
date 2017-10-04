@@ -1,0 +1,111 @@
+.form-contact {
+    width: 385px;
+    height: 475px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 70px;
+
+    @include tablets {
+        margin-bottom: 100px;
+    }
+
+    @include phones {
+        width: 90%;
+    }
+}
+.form-bg {
+    background-image: url('../img/bg/bg-works.jpg');
+    background-size: cover;
+    background-position-x: -28px;
+    background-position-y: -28px;
+    height: 475px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    filter: blur(5px);
+}
+.contact-form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(#fff, 0.5);
+    padding-top: 37px;
+    height: 475px;
+}
+.contact-form__fields {
+    padding: 0 20px;
+}
+.contact-form__title {
+    margin-bottom: 40px;
+    .block-subtitle {
+        &:before, &:after {
+            content: '';
+            display: block;
+            width: 22px;
+            height: 5px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $grey;  
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+
+    @include phones {
+        font-size: 25px;
+    }
+    }
+}
+.contact-form__row {
+    margin-bottom: 20px;
+}
+.contact-form__name-input {
+    width: 100%;
+    padding: 18px 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    @include placeholder {
+        font-family: 'robotoregular';
+        color: $title;
+        opacity: 0.5;
+    }
+}
+.contact-form__email-input {
+    @extend .contact-form__name-input;
+}
+.contact-form__textarea {
+    @extend .contact-form__name-input;
+    resize: none;
+    height: 140px;
+}
+.contact-form__btns {
+    display: flex;
+    justify-content: center;
+}
+.contact-form__button-send{
+    width: 50%;
+    padding: 15px;
+    border: none;
+    border-right: 1px solid $lightgrey;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: $lightergreen;
+    transition: 0.3s;
+    &:hover {
+        background-color: $darkergreen;
+    }
+}
+.contact-form__button-clear {
+    @extend .contact-form__button-send;
+    border-right: none; 
+}

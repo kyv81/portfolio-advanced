@@ -1,0 +1,197 @@
+.form-auth {
+    border-radius: 5px;
+    overflow: hidden;
+}
+.auth-form {
+    padding-top: 37px;
+    background-color: rgba(#fff, 0.85);
+}
+.auth-form__fields {
+    padding: 0 20px;
+}
+.auth-form__title {
+    margin-bottom: 40px;
+    .block-subtitle {
+        &:before, &:after {
+            content: '';
+            display: block;
+            width: 22px;
+            height: 5px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $grey;  
+        }
+        &:before {
+            left: 10%;
+
+            @include phones {
+                left: 5%;
+            }
+        }
+        &:after {
+            right: 10%;
+
+            @include phones {
+                right: 5%;
+            }
+        }
+    }
+}
+.auth-form__row {
+    margin-bottom: 20px;
+    @include flex;
+}
+.auth-form__login-wrap {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+.auth-form__login-icon {
+    width: 45px;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    overflow: hidden;
+    background-color: $lighterbrown;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include flex;
+}
+.user-icon, .key-icon {
+    font-size: 18px;
+    opacity: 0.5;
+}
+.auth-form__login-input {
+    width: 100%;
+    padding: 18px 20px 18px 65px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    @include placeholder {
+        font-family: 'robotoregular';
+        color: $title;
+        opacity: 0.5;
+    }
+}
+.auth-form__password-wrap {
+    @extend .auth-form__login-wrap;
+}
+.auth-form__password-icon {
+    @extend .auth-form__login-icon;
+}
+.auth-form__password-input {
+    @extend .auth-form__login-input;
+}
+.auth-form__checkbox {
+    @include flex;
+    flex-direction: row;
+    position: relative;
+    cursor: pointer;
+}
+.auth-form__check-input {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+}
+.auth-form__check-label {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'robotoregular';
+    font-size: 18px;
+    line-height: 24px;
+    color: $black;
+    padding-left: 30px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0.8;
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        z-index: 5;
+        background-color: #fff;
+        border: 1px solid $border;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+}
+.auth-form__check-input:checked + .auth-form__check-label:before {
+    background-image: url('../img/content/check.png');
+    width: 20px;
+    height: 20px;
+}
+.auth-form__radio-buttons {
+    @include flex;
+    flex-direction: row;
+}
+.auth-form__radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.auth-form__radio + .auth-form__radio {
+    margin-left: 40px;
+}
+.auth-form__radio-elem {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+}
+.auth-form__radio-fake {
+    position: relative;
+    background-color: #fff;
+    @include circle(20px);
+    border: 1px solid $border;
+    transition: 0.1s;
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        @include circle(0);
+        background-color: $green;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.auth-form__radio-elem:checked +.auth-form__radio-fake:after {
+    @include circle(8px);
+}
+.auth-form__radio-title {
+    font-family: 'robotoregular';
+    line-height: 24px;
+    color: $black;
+    opacity: 0.8;
+    margin-left: 10px;
+    transition: 0.1s;
+}
+.auth-form__radio-elem:checked +.auth-form__radio-fake +.auth-form__radio-title {
+    color: $green;
+}
+.auth-form__btns {
+    @extend .contact-form__btns;
+}
+.auth-form__button-main {
+    @extend .contact-form__button-send;
+}
+.auth-form__button-enter {
+    @extend .contact-form__button-clear;
+}
