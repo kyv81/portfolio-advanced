@@ -1,6 +1,14 @@
 console.log('Я JavaScript');
 
-const $ = require('jquery');
+const slider = require('./common/slider');
+const $ = require('jquery'); 
+
+slider(); // инициализируем слайдер
+
+
+
+
+
 
 // Hamburger
 $(document).ready(function() {
@@ -136,44 +144,44 @@ $(document).ready(function() {
 
 
 
-// Модифицированный вариант
+// // Модифицированный вариант
 
-var parallaxScroll = (function () {
-    return {
-      init: function () {
-        window.onscroll = function () {
-          var parallax= (function() {
-            var
-              bg = document.querySelector('.hero__bg'),
-              title = document.querySelector('.hero__title'),
-              user = document.querySelector('.hero__user');
+// var parallaxScroll = (function () {
+//     return {
+//       init: function () {
+//         window.onscroll = function () {
+//           var parallax= (function() {
+//             var
+//               bg = document.querySelector('.hero__bg'),
+//               title = document.querySelector('.hero__title'),
+//               user = document.querySelector('.hero__user');
   
-            return {
-              move: function (block, windowScroll, strafeAmount) {
-                var
-                  strafe = Number(block.style.top) - windowScroll / -strafeAmount + '%',
-                  style = block.style,
-                  transformString = 'translate3d(0,'+ strafe +', 0)';
+//             return {
+//               move: function (block, windowScroll, strafeAmount) {
+//                 var
+//                   strafe = windowScroll / -strafeAmount + '%',
+//                   style = block.style,
+//                   transformString = 'translate3d(0,'+ strafe +', 0)';
   
-                style.top = strafe;
-                style.transform = transformString;
-                style.webkitTransform = transformString;
-              },
-              init: function (wScroll) {
-                this.move(bg, wScroll, 45);
-                this.move(title, wScroll, 15);
-                this.move(user, wScroll, 5);
-              }
-            }
-          }());
-          var wScroll = window.pageYOffset;
+//                 style.top = strafe;
+//                 style.transform = transformString;
+//                 style.webkitTransform = transformString;
+//               },
+//               init: function (wScroll) {
+//                 this.move(bg, wScroll, 45);
+//                 this.move(title, wScroll, 15);
+//                 this.move(user, wScroll, 5);
+//               }
+//             }
+//           }());
+//           var wScroll = window.pageYOffset;
   
-          parallax.init(wScroll);
-        };
-      }
-    }
-  }());
-  parallaxScroll.init();
+//           parallax.init(wScroll);
+//         };
+//       }
+//     }
+//   }());
+//   parallaxScroll.init();
 
 // Preloader
   var preloader = (function () {
@@ -294,8 +302,35 @@ $(document).ready(function() {
 
     if ( !(check.prop('checked') && (robot.prop('checked')))) {
       fail.text('Роботам тут не место!');
-    } else {
+    } 
+    else if (login.hasClass('valid') && (passw.hasClass('valid')) && !!(check.prop('checked') && (robot.prop('checked')))) {
       fail.text('К сабмиту готов!!!');
     }
   });
 });
+
+// Parallax main
+var parallaxContainer = document.getElementById('parallax'),
+    layers = parallaxContainer.children;
+
+var moveLayers = function(e) {
+  var initialX = (window.innerWidth / 2) - e.pageX;
+  var initialY = (window.innerHeight / 2) - e.pageY;
+
+  [].slice.call(layers).forEach(function(layer, index) {
+    var
+      divider = index / 100,
+      positionX = initialX * divider,
+      positionY = initialY * divider,
+      bottomPosition = (window.innerHeight / 2) * divider,
+      transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
+      image = layer.firstElementChild;
+
+    layer.style.transform = transformString;
+    image.style.bottom = '-' + bottomPosition + 'px';
+  });
+
+};
+
+window.addEventListener('mousemove', moveLayers);
+

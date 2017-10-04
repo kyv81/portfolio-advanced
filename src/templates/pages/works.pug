@@ -22,6 +22,8 @@ block content
 
         section.section.hero.hero-works
             .hero__bg
+                img(src="img/bg/bg.jpg").hero__bg-img
+            .hero__container
                 .hero__header
                     .hero__socials
                         ul.socials
@@ -60,31 +62,81 @@ block content
                 img(src="img/bg/bg.svg").triangle
 
         section.section.works#works
-            .works__columns
-                .works__left
-                    .works__pic
-                        img(src="img/content/work-1.png").works__img
-                .works__right
-                    .works__site
-                        .works__site-title
-                            .block-subtitle.block-subtitle_align_left Сайт школы онлайн образования
-                        .works__site-desc
-                            .works__desc-title html, css, javascript
-                        button.works__site-btn
-                            .works__btn-content
-                                svg(width="19" height="19").works__btn-icon
-                                    use(xlink:href="img/icons/sprite.svg#link")
-                                span.works__btn-text Посмотреть сайт 
+            ul#slides
+                li.slide.showing
+                    .works__columns
+                            .works__left
+                                .works__pic
+                                    img(src="img/content/work-1.png").works__img
+                            .works__right
+                                .works__site
+                                    .works__site-title
+                                        .block-subtitle.block-subtitle_align_left Сайт школы онлайн образования
+                                    .works__site-desc
+                                        .works__desc-title html, css, javascript
+                                    button.works__site-btn
+                                        .works__btn-content
+                                            svg(width="19" height="19").works__btn-icon
+                                                use(xlink:href="img/icons/sprite.svg#link")
+                                            span.works__btn-text Посмотреть сайт
+                li.slide
+                    .works__columns
+                            .works__left
+                                .works__pic
+                                    img(src="img/content/work-2.png").works__img
+                            .works__right
+                                .works__site
+                                    .works__site-title
+                                        .block-subtitle.block-subtitle_align_left Сайт школы онлайн образования 2
+                                    .works__site-desc
+                                        .works__desc-title html, css, javascript (frontend)
+                                    button.works__site-btn
+                                        .works__btn-content
+                                            svg(width="19" height="19").works__btn-icon
+                                                use(xlink:href="img/icons/sprite.svg#link")
+                                            span.works__btn-text Посмотреть сайт
+                li.slide
+                    .works__columns
+                            .works__left
+                                .works__pic
+                                    img(src="img/content/work-3.png").works__img
+                            .works__right
+                                .works__site
+                                    .works__site-title
+                                        .block-subtitle.block-subtitle_align_left Сайт школы онлайн образования 3
+                                    .works__site-desc
+                                        .works__desc-title html, css, javascript (backend)
+                                    button.works__site-btn
+                                        .works__btn-content
+                                            svg(width="19" height="19").works__btn-icon
+                                                use(xlink:href="img/icons/sprite.svg#link")
+                                            span.works__btn-text Посмотреть сайт
+                li.slide
+                    .works__columns
+                            .works__left
+                                .works__pic
+                                    img(src="img/content/work-4.png").works__img
+                            .works__right
+                                .works__site
+                                    .works__site-title
+                                        .block-subtitle.block-subtitle_align_left Сайт школы онлайн образования 4
+                                    .works__site-desc
+                                        .works__desc-title html, css, javascript (frontend+backend)
+                                    button.works__site-btn
+                                        .works__btn-content
+                                            svg(width="19" height="19").works__btn-icon
+                                                use(xlink:href="img/icons/sprite.svg#link")
+                                            span.works__btn-text Посмотреть сайт 
             .arrows
-                svg(width="43" height="28").arrow-down
+                svg(width="43" height="28").arrow-down.controls#previous
                     use(xlink:href="img/icons/sprite.svg#portf_arrow_down")
-                svg(width="43" height="28").arrow-up
+                svg(width="43" height="28").arrow-up.controls#next
                     use(xlink:href="img/icons/sprite.svg#portf_arrow_up")
             .dots
-                .dot.dot_color_green
-                .dot.dot_color_white
-                .dot.dot_color_white
-                .dot.dot_color_white
+                .dot.dot_color_white#dot_1
+                .dot.dot_color_white#dot_2
+                .dot.dot_color_white#dot_3
+                .dot.dot_color_white#dot_4
 
         section.section.what
             .what__content

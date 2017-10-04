@@ -61,7 +61,12 @@
     min-height: 100%;
     max-width: 100%;
 }
+.hero__container {
+    position: relative;
+    height: 100%;
+}
 .hero__header {
+    z-index: 10;
     position: absolute;
     top: 0;
     left: 0;
@@ -110,11 +115,6 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.section-title {
-    // position: absolute;
-    // top: 50%;
-    // transform: translateY(-50%);
-}
 .hero__user {
     position: absolute;
     @include flex;
@@ -148,7 +148,7 @@
 
 .arrow {
     position: absolute;
-    bottom: 5%;
+    bottom: 7%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
