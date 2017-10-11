@@ -1,0 +1,104 @@
+.admin {
+    background: url('../img/bg/bg-admin.jpg') center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 320px; 
+}
+.container-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #00bfa5;
+    color: #fff;
+}
+.header-admin {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+.header-admin__link {
+    color: #fff;
+    text-decoration: none;
+}
+.form {
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 50px 0;
+  border: 1px solid #00bfa5; 
+}
+.form__subtitle {
+  font-size: 25px;
+  text-shadow: 1px 1px #ccc;
+  margin-bottom: 10px; 
+}
+.form__input-line, .form__textarea {
+  margin-bottom: 20px; 
+}
+.form__input, .form__textarea {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  border: 2px dashed #124f67;
+  padding: 10px 5px;
+  width: 100%; 
+  outline: none;
+}
+.form__input-line {
+  display: block; 
+}
+.form__textarea {
+  resize: vertical; 
+}
+.form__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; 
+}
+.form__btn-send, .form__btn-reset {
+  outline: none;
+  padding: 5px 15px;
+  border: 1px solid transparent;
+  transition: .5s;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1; 
+}
+.form__btn-send:hover, .form__btn-reset:hover {
+  border: 1px solid #b7c6b5; 
+}
+.form__btn-send:focus, .form__btn-reset:focus {
+  outline: none; 
+}
+.form__btn-send:active, .form__btn-reset:active {
+  background-color: #011c37; 
+}
+.admin-container {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 320px;
+  margin-top: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; 
+}
+.col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33%;
+          flex: 0 0 33%; 
+}
+
+

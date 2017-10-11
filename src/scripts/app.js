@@ -121,7 +121,7 @@ var parallax = (function() {
 
             var style = block.style;
 
-            style.top = strafe;
+            // style.top = strafe;
             style.transform = transformString;
             style.webkitTransform = transformString;
         },
@@ -139,49 +139,6 @@ window.onscroll = function() {
 
     parallax.init(wScroll);
 }
-
-
-
-
-
-// // Модифицированный вариант
-
-// var parallaxScroll = (function () {
-//     return {
-//       init: function () {
-//         window.onscroll = function () {
-//           var parallax= (function() {
-//             var
-//               bg = document.querySelector('.hero__bg'),
-//               title = document.querySelector('.hero__title'),
-//               user = document.querySelector('.hero__user');
-  
-//             return {
-//               move: function (block, windowScroll, strafeAmount) {
-//                 var
-//                   strafe = windowScroll / -strafeAmount + '%',
-//                   style = block.style,
-//                   transformString = 'translate3d(0,'+ strafe +', 0)';
-  
-//                 style.top = strafe;
-//                 style.transform = transformString;
-//                 style.webkitTransform = transformString;
-//               },
-//               init: function (wScroll) {
-//                 this.move(bg, wScroll, 45);
-//                 this.move(title, wScroll, 15);
-//                 this.move(user, wScroll, 5);
-//               }
-//             }
-//           }());
-//           var wScroll = window.pageYOffset;
-  
-//           parallax.init(wScroll);
-//         };
-//       }
-//     }
-//   }());
-//   parallaxScroll.init();
 
 // Preloader
   var preloader = (function () {
@@ -246,7 +203,7 @@ window.onscroll = function() {
     preloader.init();
   });
 
-// Form 
+//Form 
 $(document).ready(function() {
   $('#auth').on('submit', function(e){
     e.preventDefault();

@@ -1,15 +1,15 @@
-var gulp = require('gulp'),
-    pug = require('gulp-pug'),
-    del = require('del'),
-    browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const pug = require('gulp-pug');
+const del = require('del');
+const browserSync = require('browser-sync').create();
 
 // svg 
-var svgSprite = require('gulp-svg-sprite'),
-    svgmin = require('gulp-svgmin'),
-    cheerio = require('gulp-cheerio'),
-    replace = require('gulp-replace');
+const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
 
-var config = {
+const config = {
     mode: {
         symbol: {
             sprite: "../sprite.svg",
@@ -18,19 +18,19 @@ var config = {
 };
 
 // стили 
-var sass = require('gulp-sass'),
-    rename = require('gulp-rename'),
-    sourcemaps = require('gulp-sourcemaps'),
-    autoprefixer = require('gulp-autoprefixer'),
-    spritesmith = require('gulp.spritesmith');
+const sass = require('gulp-sass');
+const rename = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const spritesmith = require('gulp.spritesmith');
 
 // scripts
-var gulpWebpack = require('gulp-webpack'),
-    webpack = require('webpack'),
-    webpackConfig = require('./webpack.config.js');
+const gulpWebpack = require('gulp-webpack');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config.js');
 
 // пути 
-var paths = {
+const paths = {
     root: './build',
     templates: {
         pages: 'src/templates/pages/*.pug',
