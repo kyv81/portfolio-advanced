@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 30px;
+    font-size: 14px;
 
     @include tablets {
         flex-direction: column;
@@ -43,6 +44,10 @@
     text-decoration: none;
     color: #fff;
     padding: 0 5px;
+    transition: 0.3s;
+    &:hover {
+        color: $green;
+    }
 
     @include phones {
         white-space: nowrap;

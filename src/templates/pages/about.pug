@@ -5,9 +5,23 @@ block variables
 
 block content 
     .wrapper
+        .hamb
+            ul.hamb__list
+                li.hamb__item
+                    .block-title.block-title_color_white 
+                        a(href="works.html").hamb__link Мои работы
+                li.hamb__item
+                    .block-title.block-title_color_white 
+                        a(href="blog.html").hamb__link Блог
+                li.hamb__item
+                    .block-title.block-title_color_white 
+                        a(href="about.html").hamb__link Обо мне
+                li.hamb__item
+                    .block-title.block-title_color_white 
+                        a(href="index.html").hamb__link Авторизация
         include ../common/header.pug    
         
-        section.section.about
+        section.section.about#about
             .about__columns
                 .about__left
                     .about__left-title
@@ -28,7 +42,7 @@ block content
                     .about__right-desc.text-content
                         p Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
                     .about__right-content
-                        ul.skills-list
+                        ul.skills-list#skills
                             li.skill-list__item
                                 .skills-row
                                     .skills-row__title Frontend
@@ -131,7 +145,7 @@ block content
                 svg(width="50", height="50") 
                     use(xlink:href="img/icons/sprite.svg#map_marker")
 
-        include ../common/footer.pug  
+            include ../common/footer.pug  
                 
 
 

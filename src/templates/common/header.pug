@@ -1,6 +1,8 @@
 block content
-        section.section.hero
+        section.section.hero#parallaxScroll
             .hero__bg
+                img(src="img/bg/bg.jpg").hero__bg-img
+            .hero__container
                 .hero__header
                     .hero__socials
                         ul.socials
@@ -33,7 +35,7 @@ block content
                             .hero__user-name Юрий Курбаков
                             .hero__user-info Личный сайт веб-разработчика
                 .arrow
-                    a(href="#").arrow__link 
+                    a(href="#about").arrow__link.scroll 
                         svg(width="25" height="16").arrow__icon
                             use(xlink:href="img/icons/sprite.svg#arrow_down")
 
