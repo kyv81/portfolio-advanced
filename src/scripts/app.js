@@ -109,36 +109,36 @@ $(document).ready(function() {
 
 // Пример из видео 
 
-var parallax = (function() {
-    var bg = document.querySelector('.hero__bg');
-    var user = document.querySelector('.hero__user');
-    var sectionText = document.querySelector('.hero__title');
+// var parallax = (function() {
+//     var bg = document.querySelector('.hero__bg');
+//     var user = document.querySelector('.hero__user');
+//     var sectionText = document.querySelector('.hero__title');
 
-    return {
-        move: function(block, windowScroll, strafeAmount) {
-            var strafe = windowScroll / -strafeAmount + '%';
-            var transformString = 'translate3d(0,' + strafe + ', 0)';
+//     return {
+//         move: function(block, windowScroll, strafeAmount) {
+//             var strafe = windowScroll / -strafeAmount + '%';
+//             var transformString = 'translate3d(0,' + strafe + ', 0)';
 
-            var style = block.style;
+//             var style = block.style;
 
-            // style.top = strafe;
-            style.transform = transformString;
-            style.webkitTransform = transformString;
-        },
+//             // style.top = strafe;
+//             style.transform = transformString;
+//             style.webkitTransform = transformString;
+//         },
 
-        init: function(wScroll) {
-            this.move(bg, wScroll, 45);
-            this.move(sectionText, wScroll, 20);
-            this.move(user, wScroll, 3);
-        }
-    }
-}());
+//         init: function(wScroll) {
+//             this.move(bg, wScroll, 45);
+//             this.move(sectionText, wScroll, 20);
+//             this.move(user, wScroll, 3);
+//         }
+//     }
+// }());
 
-window.onscroll = function() {
-    var wScroll = window.pageYOffset;
+// window.onscroll = function() {
+//     var wScroll = window.pageYOffset;
 
-    parallax.init(wScroll);
-}
+//     parallax.init(wScroll);
+// }
 
 // Preloader
   var preloader = (function () {
@@ -267,27 +267,27 @@ $(document).ready(function() {
 });
 
 // Parallax main
-var parallaxContainer = document.getElementById('parallax'),
-    layers = parallaxContainer.children;
+// var parallaxContainer = document.getElementById('parallax'),
+//     layers = parallaxContainer.children;
 
-var moveLayers = function(e) {
-  var initialX = (window.innerWidth / 2) - e.pageX;
-  var initialY = (window.innerHeight / 2) - e.pageY;
+// var moveLayers = function(e) {
+//   var initialX = (window.innerWidth / 2) - e.pageX;
+//   var initialY = (window.innerHeight / 2) - e.pageY;
 
-  [].slice.call(layers).forEach(function(layer, index) {
-    var
-      divider = index / 100,
-      positionX = initialX * divider,
-      positionY = initialY * divider,
-      bottomPosition = (window.innerHeight / 2) * divider,
-      transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
-      image = layer.firstElementChild;
+//   [].slice.call(layers).forEach(function(layer, index) {
+//     var
+//       divider = index / 100,
+//       positionX = initialX * divider,
+//       positionY = initialY * divider,
+//       bottomPosition = (window.innerHeight / 2) * divider,
+//       transformString = 'translate(' + positionX + 'px,' + positionY + 'px)',
+//       image = layer.firstElementChild;
 
-    layer.style.transform = transformString;
-    image.style.bottom = '-' + bottomPosition + 'px';
-  });
+//     layer.style.transform = transformString;
+//     image.style.bottom = '-' + bottomPosition + 'px';
+//   });
 
-};
+// };
 
-window.addEventListener('mousemove', moveLayers);
+// window.addEventListener('mousemove', moveLayers);
 
